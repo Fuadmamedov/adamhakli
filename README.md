@@ -1,1 +1,393 @@
-# adamhakli
+# adamhaklimaster <?xml version="1.0" encoding="utf-8" ?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="29" android:compileSdkVersionCodename="10" android:installLocation="auto" android:targetSandboxVersion="2" android:versionCode="20100" android:versionName="5.20.0" package="gram.members.android" platformBuildVersionCode="29" platformBuildVersionName="10">
+
+	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="29" />
+
+	<uses-feature android:name="android.hardware.location.network" android:required="false" />
+
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+	<uses-permission android:name="com.android.vending.BILLING" />
+
+	<supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true" />
+
+	<uses-feature android:glEsVersion="0x20000" android:required="false" />
+
+	<uses-feature android:name="android.hardware.wifi" android:required="false" />
+
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+	<uses-permission android:name="android.permission.VIBRATE" />
+
+	<uses-permission android:name="android.permission.INTERNET" />
+
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+	<uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+
+	<uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />
+
+	<uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+
+	<uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" />
+
+	<uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+
+	<uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" />
+
+	<uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" />
+
+	<uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" />
+
+	<uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+
+	<uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+
+	<uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
+
+	<permission android:name="gram.members.android.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+
+	<uses-permission android:name="gram.members.android.permission.C2D_MESSAGE" />
+
+	<uses-permission android:name="android.permission.READ_APP_BADGE" />
+
+	<uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+
+	<uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" />
+
+	<uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+
+	<uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+	<uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+
+	<application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:hardwareAccelerated="@bool/useHardwareAcceleration" android:icon="@mipmap/ic_launcher" android:label="@string/AppName" android:largeHeap="true" android:name="org.telegram.messenger.ApplicationLoader" android:networkSecurityConfig="@xml/network_security_config" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="false" android:theme="@style/Theme.TMessages.Start" android:usesCleartextTraffic="true">
+
+		<service android:name="org.telegram.messenger.GcmPushListenerService">
+
+			<intent-filter>
+
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+
+			</intent-filter>
+
+		</service>
+
+		<service android:name="org.telegram.messenger.GcmInstanceIDListenerService">
+
+			<intent-filter>
+
+				<action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+
+			</intent-filter>
+
+		</service>
+
+		<receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+
+			<intent-filter>
+
+				<action android:name="com.google.android.gms.measurement.UPLOAD" />
+
+			</intent-filter>
+
+		</receiver>
+
+		<service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService" />
+
+		<uses-library android:name="org.apache.http.legacy" android:required="false" />
+
+		<meta-data android:name="firebase_analytics_collection_enabled" android:value="false" />
+
+		<meta-data android:name="firebase_performance_collection_enabled" android:value="false" />
+
+		<meta-data android:name="firebase_performance_logcat_enabled" android:value="false" />
+
+		<activity android:configChanges="keyboard|keyboardHidden|layoutDirection|locale|orientation|screenSize" android:hardwareAccelerated="@bool/useHardwareAcceleration" android:name="org.telegram.ui.LaunchActivity" android:theme="@style/ProblemTheme" android:windowSoftInputMode="adjustPan" />
+
+		<receiver android:exported="false" android:name="org.telegram.messenger.AutoMessageHeardReceiver">
+
+			<intent-filter>
+
+				<action android:name="org.telegram.messenger.ACTION_MESSAGE_HEARD" />
+
+			</intent-filter>
+
+		</receiver>
+
+		<receiver android:exported="false" android:name="org.telegram.messenger.AutoMessageReplyReceiver">
+
+			<intent-filter>
+
+				<action android:name="org.telegram.messenger.ACTION_MESSAGE_REPLY" />
+
+			</intent-filter>
+
+		</receiver>
+
+		<service android:exported="true" android:name="org.telegram.messenger.AuthenticatorService">
+
+			<intent-filter>
+
+				<action android:name="android.accounts.AccountAuthenticator" />
+
+			</intent-filter>
+
+			<meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/auth" />
+
+		</service>
+
+		<service android:exported="true" android:name="org.telegram.messenger.ContactsSyncAdapterService">
+
+			<intent-filter>
+
+				<action android:name="android.content.SyncAdapter" />
+
+			</intent-filter>
+
+			<meta-data android:name="android.content.SyncAdapter" android:resource="@xml/sync_contacts" />
+
+			<meta-data android:name="android.provider.CONTACTS_STRUCTURE" android:resource="@xml/contacts" />
+
+		</service>
+
+		<service android:label="@string/AppName" android:name="org.telegram.messenger.TgChooserTargetService" android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
+
+			<intent-filter>
+
+				<action android:name="android.service.chooser.ChooserTargetService" />
+
+			</intent-filter>
+
+		</service>
+
+		<service android:exported="false" android:name="org.telegram.messenger.KeepAliveJob" android:permission="android.permission.BIND_JOB_SERVICE" />
+
+		<service android:enabled="true" android:name="org.telegram.messenger.BringAppForegroundService" />
+
+		<service android:enabled="true" android:name="org.telegram.messenger.NotificationsService" />
+
+		<service android:exported="false" android:name="org.telegram.messenger.NotificationRepeat" />
+
+		<provider android:authorities="gram.members.android.provider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths" />
+
+		</provider>
+
+		<uses-library android:name="com.sec.android.app.multiwindow" android:required="false" />
+
+		<meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />
+
+		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W" android:value="632dp" />
+
+		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:value="598dp" />
+
+		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:value="632dp" />
+
+		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:value="598dp" />
+
+		<meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="face" />
+
+		<meta-data android:name="com.samsung.android.icon_container.has_icon_container" android:value="true" />
+
+		<meta-data android:name="android.max_aspect" android:value="2.5" />
+
+		<activity android:configChanges="layoutDirection|locale" android:name="gram.members.android.MainActivity" android:screenOrientation="portrait" android:theme="@style/ProblemTheme" />
+
+		<activity android:configChanges="layoutDirection|locale" android:name="gram.members.android.AgreementActivity" android:screenOrientation="portrait" android:theme="@style/ProblemTheme" />
+
+		<activity android:configChanges="layoutDirection|locale" android:label="@string/AppName" android:name="gram.members.android.MoreCoinActivity" android:screenOrientation="portrait" android:theme="@style/ProblemTheme" />
+
+		<activity android:configChanges="layoutDirection|locale" android:label="@string/AppName" android:name="gram.members.android.SendCoinActivity" android:screenOrientation="portrait" android:theme="@style/ProblemTheme" />
+
+		<activity android:configChanges="layoutDirection|locale" android:label="@string/AppName" android:name="gram.members.android.FaqActivity" android:screenOrientation="portrait" android:theme="@style/ProblemTheme" />
+
+		<activity android:configChanges="layoutDirection|locale" android:label="@string/AppName" android:name="gram.members.android.FirstPrivacyActivity" android:screenOrientation="portrait" android:theme="@style/ProblemThemeSplash">
+
+			<intent-filter>
+
+				<action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.LAUNCHER" />
+
+				<category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+
+			</intent-filter>
+
+		</activity>
+
+		<activity android:configChanges="layoutDirection|locale" android:label="@string/AppName" android:name="gram.members.android.MillionActivity" android:screenOrientation="portrait" android:theme="@style/ProblemTheme" />
+
+		<activity android:configChanges="layoutDirection|locale" android:label="@string/AppName" android:name="gram.members.android.MyTransactionActivity" android:screenOrientation="portrait" android:theme="@style/ProblemTheme" />
+
+		<activity android:configChanges="layoutDirection|locale" android:label="@string/AppName" android:name="gram.members.android.PaymentsActivity" android:screenOrientation="portrait" android:theme="@style/ProblemTheme" />
+
+		<activity android:configChanges="layoutDirection|locale" android:label="@string/AppName" android:name="gram.members.android.SettingActivity" android:screenOrientation="portrait" android:theme="@style/ProblemTheme" />
+
+		<activity android:configChanges="layoutDirection|locale" android:label="@string/AppName" android:name="gram.members.android.BuyCoinActivity" android:screenOrientation="portrait" android:theme="@style/ProblemTheme">
+
+			<intent-filter>
+
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data android:scheme="gramsappnew" />
+
+				<data android:scheme="gramsappnew" />
+
+			</intent-filter>
+
+		</activity>
+
+		<activity android:configChanges="layoutDirection|locale" android:label="@string/AppName" android:name="gram.members.android.ShareActivity" android:screenOrientation="portrait" android:theme="@style/ProblemTheme" />
+
+		<receiver android:label="NetworkChangeReceiver" android:name="gram.members.android.classes.NetworkChangeReceiver">
+
+			<intent-filter>
+
+				<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+
+				<action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+
+			</intent-filter>
+
+		</receiver>
+
+		<service android:enabled="true" android:name="gram.members.android.nointernet.RemoveAllDialogService" />
+
+		<provider android:authorities="gram.members.android.firebaseperfprovider" android:exported="false" android:initOrder="101" android:name="com.google.firebase.perf.provider.FirebasePerfProvider" />
+
+		<service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+
+			<meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar" />
+
+		</service>
+
+		<meta-data android:name="onesignal_app_id" android:value="58aa6d90-5b84-4dfc-a943-a70b9da830dc" />
+
+		<meta-data android:name="onesignal_google_project_number" android:value="str:REMOTE" />
+
+		<receiver android:name="com.onesignal.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+
+			<intent-filter android:priority="999">
+
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+				<category android:name="gram.members.android" />
+
+			</intent-filter>
+
+		</receiver>
+
+		<receiver android:name="com.onesignal.NotificationOpenedReceiver" />
+
+		<service android:name="com.onesignal.GcmIntentService" />
+
+		<service android:name="com.onesignal.GcmIntentJobService" android:permission="android.permission.BIND_JOB_SERVICE" />
+
+		<service android:name="com.onesignal.RestoreJobService" android:permission="android.permission.BIND_JOB_SERVICE" />
+
+		<service android:name="com.onesignal.RestoreKickoffJobService" android:permission="android.permission.BIND_JOB_SERVICE" />
+
+		<service android:name="com.onesignal.SyncService" android:stopWithTask="true" />
+
+		<service android:name="com.onesignal.SyncJobService" android:permission="android.permission.BIND_JOB_SERVICE" />
+
+		<activity android:name="com.onesignal.PermissionsActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+		<service android:name="com.onesignal.NotificationRestoreService" />
+
+		<receiver android:name="com.onesignal.BootUpReceiver">
+
+			<intent-filter>
+
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+
+				<action android:name="android.intent.action.QUICKBOOT_POWERON" />
+
+			</intent-filter>
+
+		</receiver>
+
+		<receiver android:name="com.onesignal.UpgradeReceiver">
+
+			<intent-filter>
+
+				<action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+
+			</intent-filter>
+
+		</receiver>
+
+		<activity android:enabled="false" android:exported="false" android:launchMode="singleInstance" android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity" android:process=":playcore_missing_splits_activity" android:stateNotNeeded="true" />
+
+		<activity android:enabled="false" android:exported="false" android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity" android:stateNotNeeded="true" android:theme="@style/Theme.PlayCore.Transparent" />
+
+		<service android:enabled="false" android:exported="true" android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService" />
+
+		<service android:exported="false" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+
+			<intent-filter android:priority="-500">
+
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+
+			</intent-filter>
+
+		</service>
+
+		<receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+
+			<intent-filter>
+
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+			</intent-filter>
+
+		</receiver>
+
+		<provider android:authorities="gram.members.android.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider" />
+
+		<receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+
+			<intent-filter>
+
+				<action android:name="com.android.vending.INSTALL_REFERRER" />
+
+			</intent-filter>
+
+		</receiver>
+
+		<service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" />
+
+		<activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+
+		<meta-data android:name="com.android.vending.derived.apk.id" android:value="1" />
+
+	</application>
+
+</manifest>
